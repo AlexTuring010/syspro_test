@@ -6,6 +6,7 @@
 
 ## check config file syncs
 diff -r /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir1 /home/users/sdi2200284/Desktop/syspro/sysprotest/config_target_dir1
+
 diff -r /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir2 /home/users/sdi2200284/Desktop/syspro/sysprotest/config_target_dir2
 
 ## console //prepei na epistrepsei oti parakoloutheite
