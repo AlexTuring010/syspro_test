@@ -23,8 +23,9 @@
 ##check initial sync in target client
 
 ## console //
+εκανα μια αλλαγη για να δουλευει ετσι οπως το περιμενει το πρόγραμμα μου
 ```bash
-cancel /sysprotest/config_source_dir1
+cancel /sysprotest/config_source_dir1@linux10.di.uoa.gr:6556
 ```
 
 ## console
