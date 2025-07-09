@@ -1,57 +1,121 @@
-## 🟢 Run `fss_manager` in a terminal
+## run fss_manager in a term
 ```bash
 ./fss_manager -l np_fss_manager.log -c config_fss.cfg -n 5
 ```
 
-## 🟢 Run `fss_console` in another terminal
+## runn fss_console in another console
 ```bash
 ./fss_console -l np_fss_console.log
 ```
 
-## 🔍 Check config file syncs
+## check config file syncs
 ```bash
-diff -r /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir1 /home/users/sdi2200284/Desktop/syspro/sysprotest/config_target_dir1
-
-diff -r /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir2 /home/users/sdi2200284/Desktop/syspro/sysprotest/config_target_dir2
+diff -r /home/users/sdi2200284/t/sysprotest/config_source_dir1 /home/users/sdi2200284/t/sysprotest/config_target_dir1
 ```
 
-## 🗂️ Console command: status (should show it's monitored)
 ```bash
-status /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir1
+diff -r /home/users/sdi2200284/t/sysprotest/config_source_dir2 /home/users/sdi2200284/t/sysprotest/config_target_dir2
 ```
 
-## ❌ Console: cancel monitoring
+## console //prepei na epistrepsei oti parakoloutheite
 ```bash
-cancel /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir1
+status /home/users/sdi2200284/t/sysprotest/config_source_dir1
 ```
 
-## 🟡 Console: add new directory pair
+## console //
 ```bash
-add /home/users/sdi2200284/Desktop/syspro/sysprotest/added_source_dir /home/users/sdi2200284/Desktop/syspro/sysprotest/added_target_dir
+cancel /home/users/sdi2200284/t/sysprotest/config_source_dir1
 ```
 
-## 📁 Add and remove test files
+## console //prepei na epistrepsei oti DEN parakoloutheite
 ```bash
-cp /home/users/sdi2200284/Desktop/syspro/sysprotest/test_files/f4_1000.txt /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir2
-cp /home/users/sdi2200284/Desktop/syspro/sysprotest/test_files/f4_2000.txt /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir2
-rm -rf /home/users/sdi2200284/Desktop/syspro/sysprotest/config_source_dir2/f4_2000.txt
+status /home/users/sdi2200284/t/sysprotest/config_source_dir1
+```
+## console
+```bash
+add /home/users/sdi2200284/t/sysprotest/added_source_dir /home/users/sdi2200284/t/sysprotest/added_target_dir
 ```
 
-## ✅ Console: shut down
+##check add file syncs
+```bash
+diff -r /home/users/sdi2200284/t/sysprotest/added_source_dir /home/users/sdi2200284/t/sysprotest/added_target_dir
+```
+## console //status of added dir. prepei na epistrepsei oti  parakoloutheite
+```bash
+status /home/users/sdi2200284/t/sysprotest/added_source_dir
+```
+
+## console //prepei na epistrepsei oti  parakoloutheite
+```bash
+sync /home/users/sdi2200284/t/sysprotest/config_source_dir2
+```
+
+#check updates replace sdi
+
+#add a file
+```bash
+cp /home/users/sdi2200284/t/sysprotest/test_files/f4_1000.txt /home/users/sdi2200284/t/sysprotest/config_source_dir2
+```
+
+```bash
+ls -las /home/users/sdi2200284/t/sysprotest/config_target_dir2
+```
+
+#add a file
+```bash
+cp /home/users/sdi2200284/t/sysprotest/test_files/f4_2000.txt /home/users/sdi2200284/t/sysprotest/config_source_dir2
+```
+
+```bash
+ls -las /home/users/sdi2200284/t/sysprotest/config_target_dir2
+```
+
+#remove a file
+```bash
+rm -rf /home/users/sdi2200284/t/sysprotest/config_source_dir2/f4_2000.txt
+```
+
+```bash
+ls -las /home/users/sdi2200284/t/sysprotest/config_target_dir2
+```
+
+#update a file
+```bash
+ls -las /home/users/sdi2200284/t/sysprotest/config_source_dir2
+```
+
+```bash
+cat /home/users/sdi2200284/t/sysprotest/test_files/f4_1000.txt >> /home/users/sdi2200284/t/sysprotest/config_source_dir2/f4_1000_copy.txt
+```
+
+```bash
+ls -las /home/users/sdi2200284/t/sysprotest/config_target_dir2
+```
+
+## console //
 ```bash
 shutdown
 ```
 
-## 🧠 fss_script commands
+### fss script
+##εμφανίζει όλους τους καταλόγους, την ημερομηνία και ώρα τελευταίου συγχρονισμού, μαζί με status
 ```bash
 ./fss_script.sh -p np_fss_manager.log -c listAll
-./fss_script.sh -p np_fss_manager.log -c listMonitored
-./fss_script.sh -p np_fss_manager.log -c listStopped
-./fss_script.sh -p np_fss_manager.log -c purge
 ```
 
-## 📜 Show log files
+##τους καταλόγους που παρακολουθούνται ενεργά.
 ```bash
-cat np_fss_manager.log
-cat np_fss_console.log
+./fss_script.sh -p np_fss_manager.log -c listMonitored
 ```
+
+##τους καταλόγους που δεν παρακολουθούνται πλέον
+```bash
+./fss_script.sh -p np_fss_manager.log -c listStopped
+```
+
+##διαγράφει μόνο τον target κατάλογο ή το logfile
+```bash
+./fss_script.sh -p np_fss_manager.log -c purge ..... (oti exei ylopoihthei
+```
+
+## Anoixe kai deixe ta log arxeio toy manager kai toy console
