@@ -115,7 +115,7 @@ shutdown
 
 ##διαγράφει μόνο τον target κατάλογο ή το logfile
 ```bash
-./fss_script.sh -p np_fss_manager.log -c purge ..... (oti exei ylopoihthei
+./fss_script.sh -p np_fss_manager.log -c purge
 ```
 
 ## Anoixe kai deixe ta log arxeio toy manager kai toy console
